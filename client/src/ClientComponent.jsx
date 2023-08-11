@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
 
+
 const ClientComponent = () => {
     const [inputData, setInputData] = useState('')
     const [getData, setGetData] = useState('')
 
+    useEffect(() => {
+        subscribe()
+    }, [])
+
     async function sendMessage() {
-        await fetch('http://localhost:4000/new-messages', {
+        await fetch(`http://localhost:4000/new-messages`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -14,13 +19,10 @@ const ClientComponent = () => {
         })
     }
 
-    useEffect(async () => {
-        await subscribe()
-    }, [])
 
     async function subscribe() {
         try {
-            const data = await fetch('http://localhost:4000/get-messages', {
+            const data = await fetch(`http://localhost:4000/get-messages`, {
                 method: 'GET'
             })
             const json = await data.json()
