@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.first {
+    flex-basis: 35%;
+    display: flex;
+}
+
+.second {
+    flex-basis: 65%;
+}
+
+.third {
+    flex-basis: 10%;
+}
+
+.firstTeam {
+    height: 100%;
+    width: 50%;
+}
+
+.secondTeam {
+    height: 100%;
+    width: 50%;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+.green {
+    background-color: lawngreen;
+}
+
+.red {
+    background-color: red;
+}
+
+.gray {
+    background-color: lightgray;
+}

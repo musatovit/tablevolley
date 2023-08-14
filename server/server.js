@@ -4,7 +4,7 @@ const events = require('events')
 
 const emitter = new events.EventEmitter()
 
-const PORT = 4000
+const PORT = 4000;
 
 const app = express()
 
@@ -12,14 +12,15 @@ app.use(cors())
 app.use(express.json());
 
 app.get('/get-messages', (req, res) => {
-    emitter.once('newMessage', (message) => {
-        res.json(message)
+    emitter.once('newMessage', (data) => {
+        console.log(data)
+        res.json(data)
     })
 })
 
 app.post('/new-messages', (req, res) => {
-    const message = req.body
-    emitter.emit('newMessage', message)
+    const data = req.body
+    emitter.emit('newMessage', data)
     res.status(200)
 })
 
