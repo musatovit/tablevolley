@@ -85,7 +85,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '',
-            fontSize: 3200,
+            fontSize: 2000,
             colorBoard: 'white'
         }))
         setCount(prev => prev + 1)
@@ -187,19 +187,32 @@ const setTextFour = () => {
     return (
         <div className='third gray'>
             <div>
-                <button onClick={firstWin}>1</button>
-                <button onClick={secondWin}>2</button>
-                <button onClick={deleteWin}>🗑</button>
+                <div>Победа</div>
+                <div>
+                    <button onClick={firstWin}>1</button>
+                    <button onClick={secondWin}>2</button>
+                    <button onClick={deleteWin}>🗑</button>
+                </div>
             </div>
             <div>
-                <button onClick={totalPlus}>+</button>
-                <button onClick={totalMinus}>-</button>
+                <div>
+                    Изменить тотал
+                </div>
+                <div>
+                    <button onClick={totalPlus}>+</button>
+                    <button onClick={totalMinus}>-</button>
+                </div>
             </div>
             <div>
-                <button onClick={indicationPlus}>+</button>
-                <button onClick={indicationMinus}>-</button>
-                <button onClick={indicationEqual}>=</button>
-                <button onClick={deleteIndication}>🗑</button>
+                <div>
+                    Знак тотала
+                </div>
+                <div>
+                    <button onClick={indicationPlus}>+</button>
+                    <button onClick={indicationMinus}>-</button>
+                    <button onClick={indicationEqual}>=</button>
+                    <button onClick={deleteIndication}>🗑</button>
+                </div>
             </div>
             <div>
                 <div>
@@ -211,14 +224,25 @@ const setTextFour = () => {
                 </div>
                 <div>
                     <input type='text' value={getData.text} onChange={e => setInputText(e.target.value)}/>
+                    <input type="checkbox"/>
                 </div>
             </div>
             <div>
-                <button onClick={fontSizePlus}>+</button>
-                <button onClick={fontSizeMinus}>-</button>
+                <div>
+                    Размер текста
+                </div>
+                <div>
+                    <button onClick={fontSizePlus}>+</button>
+                    <button onClick={fontSizeMinus}>-</button>
+                </div>
             </div>
             <div>
-                <button onClick={clearAll}>Clear</button>
+                <div>
+                    Очистить
+                </div>
+                <div>
+                    <button onClick={clearAll}>Clear</button>
+                </div>
             </div>
         </div>
     )

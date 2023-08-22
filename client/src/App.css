@@ -31,7 +31,12 @@ html, body {
 .third {
     flex-basis: 10%;
     display: flex;
+    text-align: center;
     justify-content: space-around;
+}
+
+button {
+    height: 25px;
 }
 
 .firstTeam {
