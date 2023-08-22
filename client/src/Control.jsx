@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function Control({setGetData, setCount, getData}) {
+    const [check, setCheck] = useState(false)
+    const [input, setInput] = useState('')
+
     const firstWin = () => {
         setGetData(prev =>({
             ...prev,
@@ -150,10 +153,23 @@ const setTextFour = () => {
         setCount(prev => prev + 1)
     }
 
-    const setInputText = (value) => {
+    const setInputText = () => {
+        if (!check) {
+            setGetData(prev =>({
+                ...prev,
+                text: input,
+                fontSize: 2000,
+                indication: '',
+                colorBoard: 'white'
+            }))
+        }
+        setCount(prev => prev + 1)
+    }
+
+    const sendInputText = () => {
         setGetData(prev =>({
             ...prev,
-            text: value,
+            text: input,
             fontSize: 2000,
             indication: '',
             colorBoard: 'white'
@@ -223,8 +239,13 @@ const setTextFour = () => {
                     <button onClick={deleteText}>🗑</button>
                 </div>
                 <div>
-                    <input type='text' value={getData.text} onChange={e => setInputText(e.target.value)}/>
-                    <input type="checkbox"/>
+                    <input className='sizeInput' type='text' value={input} onChange={check ? (e => setInput(e.target.value)) : (e => setInputText(e.target.value))}/>
+                    {check && <button onClick={sendInputText}>Отправить</button>}
+                    <input
+                        type="checkbox"
+                        checked={check}
+                        onChange={() => setCheck(!check)}
+                    />
                 </div>
             </div>
             <div>
