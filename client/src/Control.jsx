@@ -52,7 +52,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '+',
-            fontSize: 2200,
+            fontSize: 3200,
             text: '',
             colorBoard: 'white'
         }))
@@ -63,7 +63,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '-',
-            fontSize: 2200,
+            fontSize: 3200,
             text: '',
             colorBoard: 'white'
         }))
@@ -74,7 +74,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '=',
-            fontSize: 2200,
+            fontSize: 3200,
             text: '',
             colorBoard: 'white'
         }))
@@ -85,7 +85,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '',
-            fontSize: 2200,
+            fontSize: 3200,
             colorBoard: 'white'
         }))
         setCount(prev => prev + 1)
