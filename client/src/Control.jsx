@@ -52,7 +52,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '+',
-            fontSize: 1700,
+            fontSize: 2200,
             text: '',
             colorBoard: 'white'
         }))
@@ -63,7 +63,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '-',
-            fontSize: 1700,
+            fontSize: 2200,
             text: '',
             colorBoard: 'white'
         }))
@@ -74,7 +74,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '=',
-            fontSize: 1700,
+            fontSize: 2200,
             text: '',
             colorBoard: 'white'
         }))
@@ -85,7 +85,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             indication: '',
-            fontSize: 1700,
+            fontSize: 2200,
             colorBoard: 'white'
         }))
         setCount(prev => prev + 1)
@@ -153,7 +153,7 @@ const setTextFour = () => {
         setGetData(prev =>({
             ...prev,
             text: value,
-            fontSize: 1500,
+            fontSize: 2000,
             indication: '',
             colorBoard: 'white'
         }))
