@@ -111,6 +111,7 @@ function Control({setGetData, setCount, getData}) {
         setGetData(prev =>({
             ...prev,
             text: 'Сами!',
+            fontSize: 2000,
             indication: '',
             colorBoard: 'white'
         }))
@@ -142,7 +143,7 @@ const setTextFour = () => {
         setGetData(prev =>({
             ...prev,
             text: 'Заканчивайте!',
-            fontSize: 2000,
+            fontSize: 1500,
             indication: '',
             colorBoard: 'white'
         }))
