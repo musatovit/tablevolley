@@ -31,7 +31,6 @@ function Board({getData, control}) {
                     <div className='minus'>
                         {getData.text}
                     </div>}
-                {!getData.indication && !getData.text && control && <div className='hidden'>{getData.total}</div>}
 
                 {getData.text && control &&
                     <div style={{fontSize: '30%'}} className='minus'>
