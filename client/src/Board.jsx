@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 function Board({getData, control}) {
-    /* eslint-disable */
     return (
         <div className={`container ${getData.colorBoard}`}>
             <div className='first'>

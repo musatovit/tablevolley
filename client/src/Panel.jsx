@@ -18,7 +18,6 @@ const Panel = () => {
     const socket = useRef();
     const [connected, setConnected] = useState(false);
 
-    /* eslint-disable */
     useEffect(() => {
         socket.current = new WebSocket('ws://192.168.88.222:4000'); //'ws://192.168.88.222:4000' 'ws://localhost:4000'
 
