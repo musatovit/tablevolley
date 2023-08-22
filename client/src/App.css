@@ -75,8 +75,8 @@ html, body {
 }
 
 .hidden {
-    color: lightgray;
-    opacity: 10%;
+    color: gray;
+    opacity: 15%;
 }
 
 .blackColor {
