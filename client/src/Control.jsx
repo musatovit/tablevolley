@@ -153,16 +153,14 @@ const setTextFour = () => {
         setCount(prev => prev + 1)
     }
 
-    const setInputText = () => {
-        if (!check) {
+    const setInputText = (value) => {
             setGetData(prev =>({
                 ...prev,
-                text: input,
+                text: value,
                 fontSize: 2000,
                 indication: '',
                 colorBoard: 'white'
             }))
-        }
         setCount(prev => prev + 1)
     }
 
@@ -183,6 +181,7 @@ const setTextFour = () => {
             text: '',
             colorBoard: 'white'
         }))
+        setInput('')
         setCount(prev => prev + 1)
     }
 
@@ -239,8 +238,14 @@ const setTextFour = () => {
                     <button onClick={deleteText}>🗑</button>
                 </div>
                 <div>
-                    <input className='sizeInput' type='text' value={input} onChange={check ? (e => setInput(e.target.value)) : (e => setInputText(e.target.value))}/>
-                    {check && <button onClick={sendInputText}>Отправить</button>}
+                    {check ?
+                        <>
+                            <input className='sizeInput' type="text" value={input} onChange={e => setInput(e.target.value)}/>
+                            <button onClick={sendInputText}>Отправить</button>
+                        </>
+                        :
+                        <input type="text" value={getData.text} onChange={e => setInputText(e.target.value)}/>
+                    }
                     <input
                         type="checkbox"
                         checked={check}
