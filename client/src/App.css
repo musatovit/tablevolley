@@ -11,6 +11,13 @@ html, body {
     flex-direction: column;
 }
 
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .first {
     flex-basis: 35%;
     display: flex;
@@ -18,10 +25,13 @@ html, body {
 
 .second {
     flex-basis: 65%;
+    text-align: center;
 }
 
 .third {
     flex-basis: 10%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .firstTeam {
@@ -40,6 +50,8 @@ html, body {
 
 .white {
     background-color: white;
+    height: 100%;
+    width: 100%;
 }
 
 .green {
@@ -52,4 +64,21 @@ html, body {
 
 .gray {
     background-color: lightgray;
+}
+
+.plus {
+    color: #16b600;
+}
+
+.minus {
+    color: red;
+}
+
+.hidden {
+    color: lightgray;
+    opacity: 10%;
+}
+
+.blackColor {
+    color: black;
 }

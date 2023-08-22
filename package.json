@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-client": "cd client && npm start",
-    "start-server": "cd server && npm start"
+    "start": "cd client && npm start && cd ../server && npm start"
   },
   "repository": {
     "type": "git",
