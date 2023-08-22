@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import control from "./Control";
 
 function Board({getData, control}) {
-
+    /* eslint-disable */
     return (
         <div className={`container ${getData.colorBoard}`}>
             <div className='first'>
@@ -14,14 +13,29 @@ function Board({getData, control}) {
                     </>}
             </div>
             <div className='second' style={{fontSize: getData.fontSize + '%'}}>
-                {getData.indication &&
+                {getData.indication && !control &&
                     <div
                         className={getData.indication === '+' && 'plus' || getData.indication === '-' && 'minus' || 'blackColor'}>
                         {getData.total} {getData.indication}
                     </div>
                 }
-                {getData.text &&
+
+                {getData.indication && control &&
+                    <div
+                        style={{fontSize: '50%'}}
+                        className={getData.indication === '+' && 'plus' || getData.indication === '-' && 'minus' || 'blackColor'}>
+                        {getData.total} {getData.indication}
+                    </div>
+                }
+
+                {getData.text && !control &&
                     <div className='minus'>
+                        {getData.text}
+                    </div>}
+                {!getData.indication && !getData.text && control && <div className='hidden'>{getData.total}</div>}
+
+                {getData.text && control &&
+                    <div style={{fontSize: '30%'}} className='minus'>
                         {getData.text}
                     </div>}
                 {!getData.indication && !getData.text && control && <div className='hidden'>{getData.total}</div>}

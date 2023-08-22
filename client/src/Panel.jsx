@@ -18,8 +18,9 @@ const Panel = () => {
     const socket = useRef();
     const [connected, setConnected] = useState(false);
 
+    /* eslint-disable */
     useEffect(() => {
-        socket.current = new WebSocket('ws://192.168.88.222:4000'); //'ws://192.168.88.222:4000'
+        socket.current = new WebSocket('ws://192.168.88.222:4000'); //'ws://192.168.88.222:4000' 'ws://localhost:4000'
 
         socket.current.onopen = () => {
             setConnected(true);
@@ -59,6 +60,7 @@ const Panel = () => {
 
     }, [connected, count]);
 
+    /* eslint-disable */
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const ctrl = urlParams.get('control');
