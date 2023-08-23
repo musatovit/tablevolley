@@ -185,6 +185,20 @@ const setTextFour = () => {
         setCount(prev => prev + 1)
     }
 
+    const setTimer = () => {
+        if (getData.colorBoard === 'black') {
+            setGetData(prev =>({
+                ...prev,
+                fontSize: 500,
+                timer: {
+                    ...prev.timer,
+                    isOn: !prev.timer.isOn
+                }
+            }))
+            setCount(prev => prev + 1)
+        }
+    }
+
     const clearAll = () => {
         setGetData({
             firstWin: false,
@@ -193,7 +207,12 @@ const setTextFour = () => {
             indication: '',
             text: '',
             fontSize: 2000,
-            colorBoard: 'black'
+            colorBoard: 'black',
+            timer: {
+                isOn: false,
+                isRunning: false,
+                pause: false
+            }
         })
         setCount(prev => prev + 1)
     }
@@ -268,6 +287,11 @@ const setTextFour = () => {
                 </div>
                 <div>
                     <button onClick={clearAll}>Clear</button>
+                    <input
+                        type="checkbox"
+                        checked={getData.timer.isOn}
+                        onChange={setTimer}
+                    />
                 </div>
             </div>
         </div>

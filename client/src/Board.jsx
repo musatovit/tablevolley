@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
+import Timer from "./Timer";
 
-function Board({getData, control}) {
+function Board({getData, control, setGetData, setCount}) {
     return (
         <div className={`container ${getData.colorBoard}`}>
             <div className='first'>
@@ -36,7 +37,16 @@ function Board({getData, control}) {
                     <div style={{fontSize: '30%'}} className='minus'>
                         {getData.text}
                     </div>}
-                {!getData.indication && !getData.text && control && <div className='hidden'>{getData.total}</div>}
+
+                {getData.timer.isOn && !control &&
+                    <Timer control={control} getData={getData} setGetData={setGetData} setCount={setCount} />
+                }
+
+                {getData.timer.isOn && control &&
+                    <Timer control={control} getData={getData} setGetData={setGetData} setCount={setCount} />
+                }
+
+                {!getData.indication && !getData.text && control && !getData.timer && <div className='hidden'>{getData.total}</div>}
             </div>
         </div>
     )

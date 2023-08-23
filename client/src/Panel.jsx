@@ -13,7 +13,12 @@ const Panel = () => {
         indication: '',
         text: '',
         fontSize: 2000,
-        colorBoard: 'black'
+        colorBoard: 'black',
+        timer: {
+            isOn: false,
+            isRunning: false,
+            pause: false
+        }
     });
     const socket = useRef();
     const [connected, setConnected] = useState(false);
@@ -72,8 +77,8 @@ const Panel = () => {
 
     return (
         <>
-            <Board getData={getData} control={control} />
-            {control && <Control setGetData={setGetData} setCount={setCount} getData={getData}/>}
+            <Board getData={getData} control={control} setGetData={setGetData} setCount={setCount} />
+            {control && <Control setGetData={setGetData} setCount={setCount} getData={getData} />}
         </>
     );
 };

@@ -18,6 +18,11 @@ html, body {
     flex-direction: column;
 }
 
+.timer {
+    text-align: center;
+    color: white;
+}
+
 .first {
     flex-basis: 35%;
     display: flex;
@@ -91,3 +96,4 @@ button {
 .blackColor {
     color: black;
 }
+
