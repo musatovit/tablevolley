@@ -17,7 +17,8 @@ const Panel = () => {
         timer: {
             isOn: false,
             isRunning: false,
-            pause: false
+            pause: false,
+            time: 0,
         }
     });
     const socket = useRef();

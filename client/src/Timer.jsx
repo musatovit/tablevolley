@@ -9,7 +9,9 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
 
     useEffect(() => {
         if (isRunning !== getData.timer.isRunning) {
+            setStartGameTime(new Date())
             setIsRunning(prev => !prev)
+            setTime(getData.timer.time)
         }
     }, [getData])
 
@@ -20,7 +22,6 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
                 setTime(prevTime => prevTime - 1);
             }, 1000);
         }
-
         return () => {
             clearInterval(timer);
         };
@@ -42,36 +43,54 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
     useEffect(() => {
         if (isRunning) {
             startGameTime.setSeconds(startGameTime.getSeconds() + time)
-        } else {
-            setStartGameTime(new Date())
         }
     }, [isRunning])
 
     const startTimer = () => {
         setIsRunning(true);
+        setStartGameTime(new Date())
         setGetData(prev => ({
             ...prev,
             timer: {
                 ...prev.timer,
-                isRunning: true
+                isRunning: true,
+                time: time
             }
         }))
-        setCount(prev => prev + 1)
         if (pause) {
             setPause(false)
         }
-        console.log(getData)
+        setCount(prev => prev + 1)
     };
 
     const stopTimer = () => {
         setIsRunning(false);
         setPause(false)
-        setTime(20 * 60); // Сбросить время до стартового значения
+        setTime(20 * 60);
+        setGetData(prev => ({
+            ...prev,
+            timer: {
+                ...prev.timer,
+                isRunning: false,
+                pause: false,
+                time: time
+            }
+        }))
+        setCount(prev => prev + 1)
     };
 
     const pauseTimer = () => {
         setIsRunning(false);
         setPause(true)
+        setGetData(prev => ({
+            ...prev,
+            timer: {
+                ...prev.timer,
+                isRunning: false,
+                pause: false
+            }
+        }))
+        setCount(prev => prev + 1)
     };
 
     const addMinute = () => {
@@ -101,22 +120,24 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
     return (
         <div className='timer'>
             <div>{realTime}</div>
-            {(isRunning || pause) &&
+            {(isRunning || pause || control) &&
                 <div>До начала игры: {endTime}</div>
             }
-
-            {isRunning &&
+            {(isRunning) &&
                 <>
                     <div>Начало в: {endRealTime}</div>
                 </>
             }
             {control &&
                 <>
-                    <button onClick={startTimer}>Старт</button>
-                    {/*<button onClick={stopTimer}>Стоп</button>*/}
+                    {!isRunning && <button onClick={startTimer}>Старт</button>}
+                    {isRunning && <button onClick={stopTimer}>Стоп</button>}
                     {/*<button onClick={pauseTimer}>Пауза</button>*/}
-                    {/*<button onClick={addMinute}>Добавить минуту</button>*/}
-                    {/*<button onClick={subtractMinute}>Убавить минуту</button>*/}
+                    {!isRunning &&
+                        <>
+                            <button onClick={addMinute}>Добавить минуту</button>
+                            <button onClick={subtractMinute}>Убавить минуту</button>
+                        </>}
                 </>}
         </div>
     );

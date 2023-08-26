@@ -46,7 +46,7 @@ function Board({getData, control, setGetData, setCount}) {
                     <Timer control={control} getData={getData} setGetData={setGetData} setCount={setCount} />
                 }
 
-                {!getData.indication && !getData.text && control && !getData.timer && <div className='hidden'>{getData.total}</div>}
+                {!getData.indication && !getData.text && control && !getData.timer.isOn && <div className='hidden'>{getData.total}</div>}
             </div>
         </div>
     )
