@@ -23,6 +23,10 @@ html, body {
     color: white;
 }
 
+.timerTablo {
+ font-size: 1050%;
+}
+
 .first {
     flex-basis: 35%;
     display: flex;

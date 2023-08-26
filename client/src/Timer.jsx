@@ -118,7 +118,7 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
     const endRealTime = startGameTime.toLocaleTimeString()
 
     return (
-        <div className='timer'>
+        <div className={control ? 'timer' : 'timer timerTablo'}>
             <div>{realTime}</div>
             {(isRunning || pause || control) &&
                 <div>До начала игры: {endTime}</div>
