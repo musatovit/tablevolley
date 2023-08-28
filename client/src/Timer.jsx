@@ -115,7 +115,7 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
 
     const endTime = formatTime(time);
     const realTime = currentTime.toLocaleTimeString();
-    const endRealTime = startGameTime.toLocaleTimeString()
+    const endRealTime = startGameTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
 
     return (
         <div className={control ? 'timer' : 'timer timerTablo'}>

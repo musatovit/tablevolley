@@ -289,6 +289,7 @@ const setTextFour = () => {
                     <button onClick={clearAll}>Clear</button>
                     <input
                         type="checkbox"
+                        title='Часы'
                         checked={getData.timer.isOn}
                         onChange={setTimer}
                     />
