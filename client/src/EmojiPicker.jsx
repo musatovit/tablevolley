@@ -4,7 +4,7 @@ const EmojiPicker = ({setInput}) => {
     const [showPicker, setShowPicker] = useState(false);
     const [selectedEmoji, setSelectedEmoji] = useState('');
 
-    const emojis = ['💩','🤡','🤮','🤌','💪','👌','👍', '👎','🤦','😃','😆', '😅', '😂', '🤣', '😊', '😇'];
+    const emojis = ['💩','🤡','🤮','🤌','💪','👌','🖕','👍', '👎','🤦','😡','😃','😆', '😅', '😂', '🤣', '😊', '😇'];
 
     useEffect(() => {
         setInput(prev => prev + selectedEmoji)
