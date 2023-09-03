@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import EmojiPicker from "./EmojiPicker";
 
 function Control({setGetData, setCount, getData}) {
     const [check, setCheck] = useState(false)
@@ -259,7 +260,9 @@ const setTextFour = () => {
                 <div>
                     {check ?
                         <>
-                            <input className='sizeInput' type="text" value={input} onChange={e => setInput(e.target.value)}/>
+                            <input className='sizeInput' type="text" value={input}
+                                   onChange={e => setInput(e.target.value)}/>
+                            <EmojiPicker setInput={setInput}/>
                             <button onClick={sendInputText}>Отправить</button>
                         </>
                         :
