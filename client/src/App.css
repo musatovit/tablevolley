@@ -101,3 +101,15 @@ button {
     color: black;
 }
 
+.endRealTime {
+    color: red;
+}
+
+.blue{
+    color: lightskyblue;
+}
+
+.lightgray{
+    color: lightgray;
+    opacity: 0.5;
+}

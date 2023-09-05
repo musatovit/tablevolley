@@ -121,11 +121,11 @@ const CountdownTimer = ({control, getData, setGetData, setCount}) => {
         <div className={control ? 'timer' : 'timer timerTablo'}>
             <div>{realTime}</div>
             {(isRunning || pause || control) &&
-                <div>До начала игры: {endTime}</div>
+                <div><span className='lightgray'>До начала игры: </span><span className='blue'>{endTime}</span></div>
             }
             {(isRunning) &&
                 <>
-                    <div>Начало в: {endRealTime}</div>
+                    <div><span className='lightgray'>Начало в: </span><span className='endRealTime'>{endRealTime}</span></div>
                 </>
             }
             {control &&
