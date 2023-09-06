@@ -234,8 +234,8 @@ const setTextFour = () => {
                     Изменить тотал
                 </div>
                 <div>
-                    <button onClick={totalPlus}>+</button>
-                    <button onClick={totalMinus}>-</button>
+                    <button className='green' onClick={totalPlus}>+</button>
+                    <button className='red' onClick={totalMinus}>-</button>
                 </div>
             </div>
             <div>
@@ -243,8 +243,8 @@ const setTextFour = () => {
                     Знак тотала
                 </div>
                 <div>
-                    <button onClick={indicationPlus}>+</button>
-                    <button onClick={indicationMinus}>-</button>
+                    <button className='plus' onClick={indicationPlus}>+</button>
+                    <button className='minus' onClick={indicationMinus}>-</button>
                     <button onClick={indicationEqual}>=</button>
                     <button onClick={deleteIndication}>🗑</button>
                 </div>
